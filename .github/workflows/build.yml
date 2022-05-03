@@ -41,5 +41,5 @@ jobs:
       - name: Execute Gradle build
         run: |
           cd android/
-          ./gradlew build
+          ./gradlew assemble
 
