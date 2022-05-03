@@ -13,20 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
       - uses: actions/cache@v3
         id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          path: "./.yarn/cache"
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
 
       - name: Build
@@ -37,10 +32,15 @@ jobs:
   android:
     runs-on: ubuntu-latest
     name: Build Android
+    needs: bundle
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v2
-        
+      with:
+          distribution: "temurin"
+          java-version: "11"
+          cache: "gradle"
+
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     
