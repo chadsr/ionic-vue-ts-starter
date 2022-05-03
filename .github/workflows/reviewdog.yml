@@ -1,0 +1,32 @@
+name: Reviewdog
+on: [pull_request]
+
+jobs:
+  lint:
+    name: Lint Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "./.yarn/cache"
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        run: yarn install --check-cache
+
+      - uses: reviewdog/action-eslint@v1
+        name: ESLint Runner
+        with:
+          reporter: github-pr-review
+          level: warning
+
+      - uses: EPMatt/reviewdog-action-tsc@v1
+        name: TSC Runner
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          level: warning
