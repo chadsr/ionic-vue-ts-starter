@@ -1,0 +1,55 @@
+name: Tests
+on:
+  pull_request:
+    branches:
+        - main
+jobs:
+  jest:
+    name: Jest
+    permissions:
+      checks: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "./.yarn/cache"
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        run: yarn install --check-cache
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          skip-step: install
+          test-script: yarn run jest --ci --json --coverage --testLocationInResults --outputFile=report.json
+
+  cypress:
+    runs-on: ubuntu-latest
+    name: Cypress
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "./.yarn/cache"
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          install-command: yarn install --check-cache
+          parallel: true
+          
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
