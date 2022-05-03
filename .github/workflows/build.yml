@@ -1,0 +1,45 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Android
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "./.yarn/cache"
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        run: yarn install --check-cache
+
+      - name: Build
+        run: |
+          yarn build
+          yarn run capacitor sync
+
+      - uses: actions/setup-java@v3
+        with:
+            distribution: "temurin"
+            java-version: "11"
+            cache: "gradle"
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      
+      - name: Execute Gradle build
+        run: |
+          cd android/
+          ./gradlew assemble
+
