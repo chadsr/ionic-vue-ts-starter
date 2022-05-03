@@ -1,5 +1,9 @@
 # example-app
 
+[![Build](https://github.com/Chadsr/ionic-vue-ts-boilerplate/actions/workflows/build.yml/badge.svg)](https://github.com/Chadsr/ionic-vue-ts-boilerplate/actions/workflows/build.yml)
+[![CodeQL](https://github.com/Chadsr/ionic-vue-ts-boilerplate/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Chadsr/ionic-vue-ts-boilerplate/actions/workflows/codeql-analysis.yml)
+[![Reviewdog](https://github.com/Chadsr/ionic-vue-ts-boilerplate/actions/workflows/reviewdog.yml/badge.svg)](https://github.com/Chadsr/ionic-vue-ts-boilerplate/actions/workflows/reviewdog.yml)
+
 ## Development
 
 ### Yarn
