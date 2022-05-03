@@ -1345,6 +1345,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@capacitor/android@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "@capacitor/android@npm:3.5.0"
+  peerDependencies:
+    "@capacitor/core": ^3.5.0
+  checksum: 0783cec47ac69917c532a88755cc0b2aefc9c611d386c4de546b1717b451e9b3c32e401cd6ae059ae6869b200ddd8355f89369c4d8362bfb0750da294aaf9165
+  languageName: node
+  linkType: hard
+
 "@capacitor/app@npm:1.1.1":
   version: 1.1.1
   resolution: "@capacitor/app@npm:1.1.1"
@@ -1396,6 +1405,15 @@ __metadata:
   peerDependencies:
     "@capacitor/core": ^3.0.0
   checksum: 70247c95942d28aa37354167efcd6db6faac1fa9353eb789bccec855156920ccd995aa8c288133da43da7507aa4e1ba8932a7fe5b6d3dbbe7781569410522777
+  languageName: node
+  linkType: hard
+
+"@capacitor/ios@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "@capacitor/ios@npm:3.5.0"
+  peerDependencies:
+    "@capacitor/core": ^3.5.0
+  checksum: dc74781374f947da4d2b0e464cea5d2a7048a402f4fa59b9acd17d367c26793430dd41091a63a7d3f3d7e43eed2d8ea8311f4b8ca62b861ceeeceac9113793ac
   languageName: node
   linkType: hard
 
@@ -7015,10 +7033,12 @@ __metadata:
   resolution: "example-app@workspace:."
   dependencies:
     "@babel/core": ^7.17.9
+    "@capacitor/android": ^3.5.0
     "@capacitor/app": 1.1.1
     "@capacitor/cli": 3.5.0
     "@capacitor/core": 3.5.0
     "@capacitor/haptics": 1.1.4
+    "@capacitor/ios": ^3.5.0
     "@capacitor/keyboard": 1.2.2
     "@capacitor/status-bar": 1.0.8
     "@ionic/eslint-config": ^0.3.0
