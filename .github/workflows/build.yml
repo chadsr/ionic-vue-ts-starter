@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --check-cache
 
-      - name: Build
+      - name: Build/Sync JS Bundles
         run: |
           yarn build
           yarn run capacitor sync
