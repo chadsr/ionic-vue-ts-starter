@@ -10,11 +10,6 @@
     "lint": "eslint .",
     "fmt": "eslint . --fix"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
   "prettier": "@ionic/prettier-config",
   "dependencies": {
     "@capacitor/android": "^3.5.1",
@@ -57,7 +52,9 @@
     "@yarnpkg/pnpify": "^4.0.0-rc.3",
     "autoprefixer": "^10.4.5",
     "babel-jest": "^27.3.1",
+    "commitizen": "^4.2.4",
     "cypress": "^9.6.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
@@ -79,5 +76,10 @@
     "vue-jest": "^3.0.7",
     "vue-tsc": "^0.34.7"
   },
-  "description": "example App"
+  "description": "example App",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
