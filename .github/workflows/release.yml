@@ -28,7 +28,7 @@ jobs:
         id: version
         run: |
           echo "Next Version: ${{ steps.release.outputs.tag_name }}"
-          yarn version --new-version ${{ steps.release.outputs.tag_name	}}
+          npm version ${{ steps.release.outputs.tag_name }}
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
