@@ -1,0 +1,37 @@
+name: Releases
+on:
+  push:
+    branches:
+      - 'main'
+
+  # pull_request event is required only for autolabeler
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  versions:
+    name: Update Releases / Versions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Draft Release
+        id: release
+        # Drafts your next Release notes as Pull Requests are merged into "main"
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update project versions
+        id: version
+        run: |
+          echo "Next Version: ${{ steps.release.outputs.tag_name }}"
+          yarn version --new-version ${{ steps.release.outputs.tag_name	}}
+
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Bump project version to ${{ steps.release.outputs.tag_name }}
+          file_pattern: "package.json"
