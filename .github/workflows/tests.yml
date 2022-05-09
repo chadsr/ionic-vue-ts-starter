@@ -23,14 +23,16 @@ jobs:
 
       - name: Install Dependencies
         run: yarn install --check-cache
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          skip-step: install
-          test-script: yarn run jest --ci --json --coverage --testLocationInResults --outputFile=report.json
+      - name: Run Jest
+        run: yarn run jest --ci --coverage --testLocationInResults
+      # uses: ArtiomTr/jest-coverage-report-action@v2 # can be used as a substitute to codecov
+      # with:
+      #   skip-step: install
+      #   test-script: yarn run jest --ci --coverage --testLocationInResults
       - uses: codecov/codecov-action@v3
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ./report.json
+          files: .coverage/lcov.info
           fail_ci_if_error: true
 
   cypress:
