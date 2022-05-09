@@ -59,3 +59,35 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  android:
+    runs-on: ubuntu-latest
+    name: Android
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "./.yarn/cache"
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        run: yarn install --check-cache
+
+      - name: Build/Sync JS Bundles
+        run: |
+          yarn build
+          yarn run capacitor sync
+
+      - uses: actions/setup-java@v3
+        with:
+            distribution: "temurin"
+            java-version: "11"
+            cache: "gradle"
+
+      - name: Run android tests
+        run: |
+          cd android/
+          ./gradlew test --stacktrace
+

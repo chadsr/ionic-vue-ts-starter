@@ -1,10 +1,8 @@
 name: Build
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  release:
+      types: [published]
 
 jobs:
   build:
@@ -24,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --check-cache
 
-      - name: Build
+      - name: Build/Sync JS Bundles
         run: |
           yarn build
           yarn run capacitor sync
@@ -33,13 +31,18 @@ jobs:
         with:
             distribution: "temurin"
             java-version: "11"
-            cache: "gradle"
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       
-      - name: Execute Gradle build
+      - name: Build debug APK
         run: |
           cd android/
-          ./gradlew assemble
+          ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-dev-debug
+          path: android/build/outputs/apk/debug/app-debug.apk
 
