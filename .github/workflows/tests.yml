@@ -30,7 +30,7 @@ jobs:
       - uses: codecov/codecov-action@v3
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: .coverage/
+          files: .coverage/lcov.info
           fail_ci_if_error: true
 
   cypress:
