@@ -5,6 +5,8 @@
 
 .yarn/
 
+tests/e2e/videos/
+
 # Logs
 logs
 *.log
