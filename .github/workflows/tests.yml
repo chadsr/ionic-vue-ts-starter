@@ -46,6 +46,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install-command: yarn install --check-cache
+          command: yarn run test:e2e --headless
 
         env:
           # pass the Dashboard record key as an environment variable
