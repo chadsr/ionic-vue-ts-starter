@@ -1,4 +1,4 @@
-import HomePage from '@/views/HomePage.vue';
+import Tab1Page from '@/views/Tab1Page.vue';
 import { mount } from '@vue/test-utils';
 
 describe('FolderPage.vue', () => {
@@ -8,7 +8,7 @@ describe('FolderPage.vue', () => {
         id: 'Outbox',
       },
     };
-    const wrapper = mount(HomePage, {
+    const wrapper = mount(Tab1Page, {
       global: {
         mocks: {
           $route: mockRoute,
