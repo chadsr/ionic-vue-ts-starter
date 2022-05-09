@@ -26,11 +26,11 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           skip-step: install
-          test-script: yarn run jest --ci --json --coverage --testLocationInResults --outputFile=report.json
+          test-script: yarn run jest --ci --coverage --testLocationInResults
       - uses: codecov/codecov-action@v3
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ./report.json
+          files: .coverage/
           fail_ci_if_error: true
 
   cypress:

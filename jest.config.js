@@ -3,6 +3,7 @@ module.exports = {
   transformIgnorePatterns: ['/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)'],
   collectCoverage: true,
   coverageReporters: ['json', 'lcov'],
+  coverageDirectory: '.coverage/',
   // transform: {
   //   '^.+\.js$': 'babel-jest',
   //   '.\.(vue)$': 'vue-jest'
