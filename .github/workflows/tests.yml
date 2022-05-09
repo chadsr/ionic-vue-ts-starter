@@ -27,6 +27,11 @@ jobs:
         with:
           skip-step: install
           test-script: yarn run jest --ci --json --coverage --testLocationInResults --outputFile=report.json
+      - uses: codecov/codecov-action@v3
+        with:
+          # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ./report.json
+          fail_ci_if_error: true
 
   cypress:
     runs-on: ubuntu-latest
@@ -47,7 +52,6 @@ jobs:
         with:
           install-command: yarn install --check-cache
           command: yarn run test:e2e --headless
-
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
