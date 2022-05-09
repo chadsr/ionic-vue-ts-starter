@@ -1,4 +1,13 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+
+    // See https://github.com/ReactiveCircus/app-versioning
+    id 'io.github.reactivecircus.app-versioning' version "1.1.2"
+}
+
+appVersioning {
+    gitRootDirectory.set(rootProject.file("../"))
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
