@@ -32,14 +32,22 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update project versions
-        id: version
+      - name: Update package.json version
+        id: package-version
         run: |
           echo "Next Version: ${{ steps.release.outputs.tag_name }}"
           npm version --git-tag-version=false --allow-same-version=true ${{ steps.release.outputs.tag_name }}
+
+      - name: Update IOS Info.plist versions
+        id: ios-version
+        uses: damienaicheh/update-ios-version-info-plist-action@v1
+        with:
+          info-plist-path: "./ios/App/App/Info.plist"
+          bundle-short-version-string: "${{ steps.release.outputs.tag_name }}"
+          bundle-version: "${{ steps.release.outputs.tag_name }}"
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore(version): bump to ${{ steps.release.outputs.tag_name }}"
-          file_pattern: "package.json"
+          file_pattern: "package.json Info.plist"
