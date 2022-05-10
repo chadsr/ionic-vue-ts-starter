@@ -39,10 +39,11 @@ jobs:
         run: |
           cd android/
           ./gradlew assembleDebug --stacktrace
+          cd ../
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: app-dev-debug
-          path: android/build/outputs/apk/debug/app-debug.apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
 
