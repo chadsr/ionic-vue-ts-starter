@@ -36,7 +36,7 @@ jobs:
         id: version
         run: |
           echo "Next Version: ${{ steps.release.outputs.tag_name }}"
-          npm version --git-tag-version=false ${{ steps.release.outputs.tag_name }}
+          npm version --git-tag-version=false --allow-same-version=true ${{ steps.release.outputs.tag_name }}
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
