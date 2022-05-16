@@ -31,7 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@capacitor/cli": "3.5.1",
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^2.0.0",
