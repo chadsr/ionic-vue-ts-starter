@@ -9,11 +9,23 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    labels:
+      - "nodejs"
+      - "dependencies"
+      - "patch"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    labels:
+      - "gha"
+      - "dependencies"
+      - "patch"
   - package-ecosystem: "gradle"
     directory: "/android"
     schedule:
       interval: "daily"
+    labels:
+      - "gradle"
+      - "dependencies"
+      - "patch"
