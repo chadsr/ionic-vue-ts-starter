@@ -1254,14 +1254,14 @@
     untildify "^4.0.0"
     wrap-ansi "^7.0.0"
 
-"@ionic/vue-router@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.yarnpkg.com/@ionic/vue-router/-/vue-router-6.1.5.tgz#075234dec7e1f8d572b706630d5c6a7ce8231d88"
-  integrity sha512-CBC3g5vyNMLz+FKCDFVNLlpC1HtX2sL64KhqIBWqufOHkg+pTRrFBZbI5xUWCBmEQlc2aKJGqLZvspebdvt8ZQ==
+"@ionic/vue-router@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.yarnpkg.com/@ionic/vue-router/-/vue-router-6.1.8.tgz#dc64f1a75ce7f149e1559315d964041d42d4554c"
+  integrity sha512-6hlq/FUAMfJjUQFVcR1lIssMdUPkHf9VL7QteIHNb75qciXaNCghX4WFGaar4F8rVS+JnMxp3L4rGW7R+0LvWg==
   dependencies:
-    "@ionic/vue" "^6.1.5"
+    "@ionic/vue" "^6.1.8"
 
-"@ionic/vue@^6.1.5", "@ionic/vue@^6.1.8":
+"@ionic/vue@^6.1.8":
   version "6.1.8"
   resolved "https://registry.yarnpkg.com/@ionic/vue/-/vue-6.1.8.tgz#dbae9d1da388342af0c509fd81042140f4338209"
   integrity sha512-bziDDBMr6w9XLxkiXeASD/g16g0qvU2cGeaTD9n7+5ucsebVCbHiIblHgT+g1AiYYIoKee01yGAOpe1lC0EahA==
