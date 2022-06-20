@@ -76,7 +76,7 @@
     "vite": "^2.9.9",
     "vue-eslint-parser": "^9.0.2",
     "vue-jest": "^3.0.7",
-    "vue-tsc": "^0.35.2"
+    "vue-tsc": "^0.38.1"
   },
   "description": "example App",
   "config": {
