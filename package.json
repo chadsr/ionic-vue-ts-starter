@@ -26,7 +26,7 @@
     "pinia": "^2.0.14",
     "vue": "^3.2.36",
     "vue-axios": "^3.4.1",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
