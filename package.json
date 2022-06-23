@@ -26,7 +26,7 @@
     "pinia": "^2.0.14",
     "vue": "^3.2.36",
     "vue-axios": "^3.4.1",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
@@ -57,7 +57,7 @@
     "commitizen": "^4.2.4",
     "cypress": "^9.6.1",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "^8.16.0",
+    "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
