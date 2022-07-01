@@ -2643,24 +2643,24 @@
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
 
-"@yarnpkg/core@^4.0.0-rc.6":
-  version "4.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/core/-/core-4.0.0-rc.6.tgz#b4af66a0b899ce94061961043ccc638532c9b917"
-  integrity sha512-Qj4QJ4jxBz0Lo7+B3sm+/nB9GoewDNGLLbooVt2cxjK2i3VSAAPY9DoIC9oTkXrdVWrUMipFx9iZIQiUEYqh3Q==
+"@yarnpkg/core@^4.0.0-rc.10":
+  version "4.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/core/-/core-4.0.0-rc.10.tgz#3d69c9315c6acf7c0364e7ead5e9188b55aea0f6"
+  integrity sha512-uxKO32KtC0C2JM9doT8glA5rpt6llgqWT7+1/nTFzcjJfNRJeTRyItCnYnTBHcQ9aOe7s6RCCIVHg2jsD2t5kg==
   dependencies:
     "@arcanis/slice-ansi" "^1.1.1"
     "@types/semver" "^7.1.0"
     "@types/treeify" "^1.0.0"
-    "@yarnpkg/fslib" "^3.0.0-rc.6"
-    "@yarnpkg/libzip" "^3.0.0-rc.6"
-    "@yarnpkg/parsers" "^3.0.0-rc.6"
-    "@yarnpkg/shell" "^4.0.0-rc.6"
+    "@yarnpkg/fslib" "^3.0.0-rc.10"
+    "@yarnpkg/libzip" "^3.0.0-rc.10"
+    "@yarnpkg/parsers" "^3.0.0-rc.10"
+    "@yarnpkg/shell" "^4.0.0-rc.10"
     camelcase "^5.3.1"
     chalk "^3.0.0"
     ci-info "^3.2.0"
     clipanion "^3.2.0-rc.10"
     cross-spawn "7.0.3"
-    diff "^4.0.1"
+    diff "^5.1.0"
     globby "^11.0.1"
     got "^11.7.0"
     lodash "^4.17.15"
@@ -2674,56 +2674,56 @@
     tslib "^1.13.0"
     tunnel "^0.0.6"
 
-"@yarnpkg/fslib@^3.0.0-rc.6":
-  version "3.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/fslib/-/fslib-3.0.0-rc.6.tgz#485cd97117702349a7969900ca0c764e7a08257c"
-  integrity sha512-VDLBREUEHrIycONRHh/Ap4cOHcRKJ9IbSmMYrm+3y5Z5gxu0KXojr8E+QoMAr7nveohp9y7CNdEVPbmH7g8K/Q==
+"@yarnpkg/fslib@^3.0.0-rc.10":
+  version "3.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/fslib/-/fslib-3.0.0-rc.10.tgz#6be069fab008279af1eb1dda152a3e3dcc485947"
+  integrity sha512-DmvYHfFVMZOmIwTYCdCbIBEytaHlNwTfjTRX/3o9V6DtRcML5A2wyxVCqIZ61NOQWDJxQN1oILwJXIhPRDmeIw==
   dependencies:
-    "@yarnpkg/libzip" "^3.0.0-rc.6"
+    "@yarnpkg/libzip" "^3.0.0-rc.10"
     tslib "^1.13.0"
 
-"@yarnpkg/libzip@^3.0.0-rc.6":
-  version "3.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/libzip/-/libzip-3.0.0-rc.6.tgz#e1d401cc498157da3111a6b65222a7114d82936d"
-  integrity sha512-3KH7WyNyYF5SrvbdG6URI5erL5hWzbMQZnqBVo/T73dXw91Qxlo37Ktg/YpGH/IlQeuzW6ru88so+E9qWHUA/w==
+"@yarnpkg/libzip@^3.0.0-rc.10":
+  version "3.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/libzip/-/libzip-3.0.0-rc.10.tgz#8b7adff6ef72a5d3d3c008d6e9e6fbe466c4cc24"
+  integrity sha512-XX6B+yz+3boOy1XLp0HhjwL/QIELCEjPx/ev4AhE6z7Jm5THquoFo7stH53uKPhRyRcga4T0nvxPAjlqQq37ng==
   dependencies:
     "@types/emscripten" "^1.39.6"
     tslib "^1.13.0"
 
-"@yarnpkg/nm@^4.0.0-rc.6":
-  version "4.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/nm/-/nm-4.0.0-rc.6.tgz#04e245aee85a7f5a85c691d1c0ab88c46f40e28b"
-  integrity sha512-BwXlPHyyru7XFctyQM4RTD/eF4i8GIpikNWMAD2eguqEHm1k/nIfTfH66LCwTb4HYQ2Qx1XpXrX/0R1KlpMNBA==
+"@yarnpkg/nm@^4.0.0-rc.10":
+  version "4.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/nm/-/nm-4.0.0-rc.10.tgz#e3d049841425ba2736bce1779c1dde202a13327b"
+  integrity sha512-Bi0Ar3GQf4bkZoWtU2dzN0z9oc9/bZpe8xPwhSfZXtXHAj7xnmiltpCFkjT2+4TyojYGn21bU/lRlor4TcJuFA==
   dependencies:
-    "@yarnpkg/core" "^4.0.0-rc.6"
-    "@yarnpkg/fslib" "^3.0.0-rc.6"
+    "@yarnpkg/core" "^4.0.0-rc.10"
+    "@yarnpkg/fslib" "^3.0.0-rc.10"
 
-"@yarnpkg/parsers@^3.0.0-rc.6":
-  version "3.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/parsers/-/parsers-3.0.0-rc.6.tgz#3c93267fdae4470e4eaaf8c5f81d0d00ea177f76"
-  integrity sha512-YqtJ9VQqQixZsJJS4X83e6RMpgK1jmQJSIrCfd1wO3i/7vPk9QoLvvZS4bwZ2ha8QWqWlO/alAcXCGBezEI1Ig==
+"@yarnpkg/parsers@^3.0.0-rc.10":
+  version "3.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/parsers/-/parsers-3.0.0-rc.10.tgz#cbbb9970d396fd274911ef0f8204d52132394271"
+  integrity sha512-TZxyre59hLjWQ0FcakvEl2a+PTArDJ2VYC3e3xjec+OpTuQSK7333VscpiT2UJKJPDUGrYq1Z1LDpnIYv4nHLw==
   dependencies:
     js-yaml "^3.10.0"
     tslib "^1.13.0"
 
-"@yarnpkg/pnpify@^4.0.0-rc.6":
-  version "4.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/pnpify/-/pnpify-4.0.0-rc.6.tgz#f3b80027c79aba4b09e6cebf37de82ce624a872f"
-  integrity sha512-073FEEFbqpOg7MR21bubld8/t/xR2cD1cWX5Pp2U/6mFSq014bi5sbhXRTPZyvxLPrEscm2+Q9Yuwb0z5JkE6w==
+"@yarnpkg/pnpify@^4.0.0-rc.10":
+  version "4.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/pnpify/-/pnpify-4.0.0-rc.10.tgz#dc445ef1c533af75bf0840164f90e09cc017ec39"
+  integrity sha512-9fAe6J6yV0GZrO8dNMkWSgrBVU+pEVQEUrhgEe1vyglh4dxwLYFWn/Gducb47A1olpivaP9cXPAVXztjvC6Imw==
   dependencies:
-    "@yarnpkg/core" "^4.0.0-rc.6"
-    "@yarnpkg/fslib" "^3.0.0-rc.6"
-    "@yarnpkg/nm" "^4.0.0-rc.6"
+    "@yarnpkg/core" "^4.0.0-rc.10"
+    "@yarnpkg/fslib" "^3.0.0-rc.10"
+    "@yarnpkg/nm" "^4.0.0-rc.10"
     clipanion "^3.2.0-rc.10"
     tslib "^1.13.0"
 
-"@yarnpkg/shell@^4.0.0-rc.6":
-  version "4.0.0-rc.6"
-  resolved "https://registry.yarnpkg.com/@yarnpkg/shell/-/shell-4.0.0-rc.6.tgz#b79041656e8da654023ad38214f53b6eddc05d22"
-  integrity sha512-OD4ST0Cb+T/BLwdQFGEaxjsJKzO+VLzlgF4jlKNtCuBseLEuSAFdXfgPFerP4Wa/t3nG7R8UuJAUCHqBdmoI2Q==
+"@yarnpkg/shell@^4.0.0-rc.10":
+  version "4.0.0-rc.10"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/shell/-/shell-4.0.0-rc.10.tgz#9172c268f1ff860a507689e0341c9e4f340f3550"
+  integrity sha512-HWL9v+B7d76B3rpqxchKveBYPofhZTNX1bVpXkCK2/7gS4JG3WBrNGtc0A8RQocpl1gBkYYCvUscIDwcERtrfA==
   dependencies:
-    "@yarnpkg/fslib" "^3.0.0-rc.6"
-    "@yarnpkg/parsers" "^3.0.0-rc.6"
+    "@yarnpkg/fslib" "^3.0.0-rc.10"
+    "@yarnpkg/parsers" "^3.0.0-rc.10"
     chalk "^3.0.0"
     clipanion "^3.2.0-rc.10"
     cross-spawn "7.0.3"
@@ -4325,6 +4325,11 @@ diff-sequences@^27.5.1:
 diff@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
+
+diff@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-5.1.0.tgz#bc52d298c5ea8df9194800224445ed43ffc87e40"
+  integrity sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==
 
 dir-glob@^3.0.1:
   version "3.0.1"
