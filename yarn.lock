@@ -914,9 +914,10 @@
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-3.5.1.tgz#976de8909487c0ca35b8f1616ce8837bb19ff8c6"
 
-"@capacitor/keyboard@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@capacitor/keyboard/-/keyboard-1.2.2.tgz#7be5d2e4956b77e5eb7235ec020d131c9f87f30a"
+"@capacitor/keyboard@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@capacitor/keyboard/-/keyboard-1.2.3.tgz#8046d8256e1c72ed3a2dad6ff01dc37a0c415077"
+  integrity sha512-KTSzJkMa6CrmDIDhWfswNPqS7gvYlL25E1gqXbY7w/EhyBjJhEdF0bc6QUFufS+ZVMlcPafc0/E5P+pTfLnKiA==
 
 "@capacitor/status-bar@1.0.8":
   version "1.0.8"
