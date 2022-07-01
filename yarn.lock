@@ -1167,10 +1167,10 @@
     debug "^4.0.0"
     tslib "^2.0.1"
 
-"@ionic/core@^6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-6.1.8.tgz#e25f4a06063670f34c24a8daeaefefe8b94e90f8"
-  integrity sha512-EMYebwmS4UogpNrTyuCgIETKwE7XA93V7X3YacK2UArm1Xf98w3FsnfAYeMaUqY93bDxih/CSKm3NpUhVWP44A==
+"@ionic/core@^6.1.12":
+  version "6.1.12"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-6.1.12.tgz#1c2ae3206d2801dab788d1540cc4ca0876bb02ee"
+  integrity sha512-CISprIpbGJHMjxsx0OAQ6grnsbBuhcImaiL5rRBI7MtncIW56nge4IO064n86bwhxRqvoXCA6EGq9D1S5Cn45g==
   dependencies:
     "@stencil/core" "^2.16.0"
     ionicons "^6.0.2"
@@ -1255,19 +1255,19 @@
     untildify "^4.0.0"
     wrap-ansi "^7.0.0"
 
-"@ionic/vue-router@^6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@ionic/vue-router/-/vue-router-6.1.8.tgz#dc64f1a75ce7f149e1559315d964041d42d4554c"
-  integrity sha512-6hlq/FUAMfJjUQFVcR1lIssMdUPkHf9VL7QteIHNb75qciXaNCghX4WFGaar4F8rVS+JnMxp3L4rGW7R+0LvWg==
+"@ionic/vue-router@^6.1.12":
+  version "6.1.12"
+  resolved "https://registry.yarnpkg.com/@ionic/vue-router/-/vue-router-6.1.12.tgz#8f4d89ad7bf2f4486161b596f6356e3c595e4064"
+  integrity sha512-vQqrIBs+FzkZQvD2PhFvvaL6WLCU70Yjn/cTnyDLOHOysfQJXytGFyIrMAOv822EzgNja8LEAIvnxDlmxOYy0A==
   dependencies:
-    "@ionic/vue" "^6.1.8"
+    "@ionic/vue" "^6.1.12"
 
-"@ionic/vue@^6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@ionic/vue/-/vue-6.1.8.tgz#dbae9d1da388342af0c509fd81042140f4338209"
-  integrity sha512-bziDDBMr6w9XLxkiXeASD/g16g0qvU2cGeaTD9n7+5ucsebVCbHiIblHgT+g1AiYYIoKee01yGAOpe1lC0EahA==
+"@ionic/vue@^6.1.12", "@ionic/vue@^6.1.8":
+  version "6.1.12"
+  resolved "https://registry.yarnpkg.com/@ionic/vue/-/vue-6.1.12.tgz#e49ccf15eadc62301fd5346a8fbf58c4c080f28c"
+  integrity sha512-E6tW5GYml67X5YrMhNQb4EF50tE/oaKgQLFBTnp6VxAKTaCDrTQI+N9Ui4juKQ9amSZjVCaOFD/5nsmV/21eWg==
   dependencies:
-    "@ionic/core" "^6.1.8"
+    "@ionic/core" "^6.1.12"
     ionicons "^6.0.2"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
@@ -8033,9 +8033,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-"prettier@^1.18.2 || ^2.0.0", prettier@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
+"prettier@^1.18.2 || ^2.0.0", prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 pretty-bytes@^5.6.0:
   version "5.6.0"
@@ -9512,10 +9513,10 @@ vue-eslint-parser@^8.0.0, vue-eslint-parser@^8.0.1:
     lodash "^4.17.21"
     semver "^7.3.5"
 
-vue-eslint-parser@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.0.2.tgz#d2535516f3f55adb387939427fe741065eb7948a"
-  integrity sha512-uCPQwTGjOtAYrwnU+76pYxalhjsh7iFBsHwBqDHiOPTxtICDaraO4Szw54WFTNZTAEsgHHzqFOu1mmnBOBRzDA==
+vue-eslint-parser@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.0.3.tgz#0c17a89e0932cc94fa6a79f0726697e13bfe3c96"
+  integrity sha512-yL+ZDb+9T0ELG4VIFo/2anAOz8SvBdlqEnQnvJ3M7Scq56DvtjY0VY88bByRZB0D4J0u8olBcfrXTVONXsh4og==
   dependencies:
     debug "^4.3.4"
     eslint-scope "^7.1.1"
