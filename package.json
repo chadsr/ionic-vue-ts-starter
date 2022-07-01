@@ -47,7 +47,7 @@
     "@vue/cli-plugin-router": "^5.0.4",
     "@vue/cli-plugin-typescript": "^5.0.6",
     "@vue/cli-plugin-unit-jest": "^5.0.4",
-    "@vue/cli-service": "^5.0.4",
+    "@vue/cli-service": "^5.0.6",
     "@vue/eslint-config-typescript": "^10.0.0",
     "@vue/test-utils": "^2.0.0",
     "@vue/vue3-jest": "^27.0.0-alpha.3",
