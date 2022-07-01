@@ -32,7 +32,7 @@
     "@babel/core": "^7.18.2",
     "@capacitor/cli": "3.5.1",
     "@commitlint/cli": "^17.0.2",
-    "@commitlint/config-conventional": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.3",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^2.0.0",
     "@types/jest": "^27.4.1",
