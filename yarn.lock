@@ -879,9 +879,10 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@capacitor/app/-/app-1.1.1.tgz#bde7202faad1b47c4ae2c4a622285d7569384c5e"
 
-"@capacitor/cli@3.5.1":
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-3.5.1.tgz#7184554f3460a6fa0988ed7db2617fd53e7eade5"
+"@capacitor/cli@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-3.6.0.tgz#31c07f364828e750d20a8e6bb2d516f0d21be81d"
+  integrity sha512-YNQNM1wvy3zJkKNWcNL5KzIqgV5J1YzO27MHSxZyVA6+XmWCZi8Qz/Cq/uDrepsuBG67QdIvtOeL+JnXARedfw==
   dependencies:
     "@ionic/cli-framework-output" "^2.2.1"
     "@ionic/utils-fs" "^3.1.5"
@@ -943,10 +944,10 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@^17.0.2":
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.0.2.tgz#298c9076e25c1e8760f04ee1be8ce43c856a4b72"
-  integrity sha512-MfP0I/JbxKkzo+HXWB7B3WstGS4BiniotU3d3xQ9gK8cR0DbeZ4MuyGCWF65YDyrcDTS3WlrJ3ndSPA1pqhoPw==
+"@commitlint/config-conventional@^17.0.3":
+  version "17.0.3"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.0.3.tgz#61e937357ce63ea08a2017e58b918748fcf3abc5"
+  integrity sha512-HCnzTm5ATwwwzNVq5Y57poS0a1oOOcd5pc1MmBpLbGmSysc4i7F/++JuwtdFPu16sgM3H9J/j2zznRLOSGVO2A==
   dependencies:
     conventional-changelog-conventionalcommits "^5.0.0"
 
@@ -9370,10 +9371,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.6.4, typescript@^4.7.2:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.2.tgz#1f9aa2ceb9af87cca227813b4310fff0b51593c4"
-  integrity sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==
+typescript@^4.6.4, typescript@^4.7.4:
+  version "4.7.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
+  integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
 
 unbox-primitive@^1.0.1:
   version "1.0.2"
@@ -9513,10 +9514,10 @@ vue-eslint-parser@^8.0.0, vue-eslint-parser@^8.0.1:
     lodash "^4.17.21"
     semver "^7.3.5"
 
-vue-eslint-parser@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.0.2.tgz#d2535516f3f55adb387939427fe741065eb7948a"
-  integrity sha512-uCPQwTGjOtAYrwnU+76pYxalhjsh7iFBsHwBqDHiOPTxtICDaraO4Szw54WFTNZTAEsgHHzqFOu1mmnBOBRzDA==
+vue-eslint-parser@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.0.3.tgz#0c17a89e0932cc94fa6a79f0726697e13bfe3c96"
+  integrity sha512-yL+ZDb+9T0ELG4VIFo/2anAOz8SvBdlqEnQnvJ3M7Scq56DvtjY0VY88bByRZB0D4J0u8olBcfrXTVONXsh4og==
   dependencies:
     debug "^4.3.4"
     eslint-scope "^7.1.1"
