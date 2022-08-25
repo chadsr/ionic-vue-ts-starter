@@ -39,7 +39,7 @@
     "@types/node": "^18.6.1",
     "@types/webpack-env": "^1.17.0",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.27.0",
+    "@typescript-eslint/parser": "^5.35.1",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-e2e-cypress": "^5.0.4",
