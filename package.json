@@ -51,7 +51,7 @@
     "@vue/eslint-config-typescript": "^10.0.0",
     "@vue/test-utils": "^2.0.0",
     "@vue/vue3-jest": "^27.0.0-alpha.3",
-    "@yarnpkg/pnpify": "^4.0.0-rc.10",
+    "@yarnpkg/pnpify": "^4.0.0-rc.41",
     "autoprefixer": "^10.4.5",
     "babel-jest": "^27.3.1",
     "commitizen": "^4.2.4",
