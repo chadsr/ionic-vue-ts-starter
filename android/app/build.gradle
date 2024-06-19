@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
 
     // See https://github.com/ReactiveCircus/app-versioning
-    id 'io.github.reactivecircus.app-versioning' version "1.2.0"
+    id 'io.github.reactivecircus.app-versioning' version "1.3.2"
 }
 
 appVersioning {
