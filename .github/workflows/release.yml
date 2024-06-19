@@ -40,7 +40,7 @@ jobs:
 
       - name: Update IOS Info.plist versions
         id: ios-version
-        uses: damienaicheh/update-ios-version-info-plist-action@v1.1.0
+        uses: damienaicheh/update-ios-version-info-plist-action@v1.2.0
         with:
           info-plist-path: "./ios/App/App/Info.plist"
           bundle-short-version-string: "${{ steps.release.outputs.tag_name }}"
