@@ -32,7 +32,7 @@ jobs:
       # with:
       #   skip-step: install
       #   test-script: yarn run jest --ci --coverage --testLocationInResults
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v4
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: .coverage/lcov.info
