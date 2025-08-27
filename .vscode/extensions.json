@@ -1,3 +1,10 @@
 {
-  "recommendations": ["dbaeumer.vscode-eslint", "octref.vetur", "esbenp.prettier-vscode", "arcanis.vscode-zipfs"]
+  "recommendations": [
+    "Vue.volar",
+    "vitest.explorer",
+    "ms-playwright.playwright",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode"
+  ]
 }
