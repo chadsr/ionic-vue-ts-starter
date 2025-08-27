@@ -3,7 +3,9 @@
 !.vscode/extensions.json
 .yarn/
 .coverage/
-tests/e2e/videos/
+e2e/videos/
+playwright-report/
+test-results/
 
 # Logs
 logs

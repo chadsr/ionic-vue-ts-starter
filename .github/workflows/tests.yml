@@ -7,88 +7,112 @@ on:
     branches:
         - main
 jobs:
-  jest:
-    name: Jest
+  unit:
+    name: Unit Tests
     permissions:
       checks: write
-      pull-requests: write
+      contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/cache@v3
-        id: yarn-cache
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
         with:
-          path: "./.yarn/cache"
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
+          cache: "npm"
+          node-version-file: ".node_version"
       - name: Install Dependencies
-        run: yarn install --check-cache
-      - name: Run Jest
-        run: yarn run jest --ci --coverage --testLocationInResults
-      # uses: ArtiomTr/jest-coverage-report-action@v2 # can be used as a substitute to codecov
-      # with:
-      #   skip-step: install
-      #   test-script: yarn run jest --ci --coverage --testLocationInResults
+        run: npm ci
+      - name: Run Vitest
+        run: npm run test:unit
       - uses: codecov/codecov-action@v4
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: .coverage/lcov.info
-          fail_ci_if_error: true
+          files: coverage/lcov.info
+          fail_ci_if_error: false
 
-  cypress:
+  test-e2e:
     runs-on: ubuntu-latest
-    name: Cypress
+    strategy:
+      fail-fast: true
+      matrix:
+        project:
+          [
+            { name: chromium, browser: chromium },
+            { name: safari, browser: webkit },
+          ]
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/cache@v3
-        id: yarn-cache
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
         with:
-          path: "./.yarn/cache"
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+          node-version-file: ".node_version"
+          cache: "npm"
+      - name: Install npm Dependencies
+        run: npm ci
+      - name: Install Browser Dependencies
+        run: npx playwright install ${{ matrix.project.browser }} --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test --project=${{ matrix.project.name }}
+      - name: Upload blob report to GitHub Actions Artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
         with:
-          install-command: yarn install --check-cache
-          command: yarn run test:e2e --headless
-        env:
-          # pass the Dashboard record key as an environment variable
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: blob-report-${{ matrix.project.name }}
+          path: blob-report
+          retention-days: 1
+
+  merge-reports:
+    # Merge reports after playwright-tests, even if some shards have failed
+    if: ${{ !cancelled() }}
+    needs: [test-e2e]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node_version"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Download blob reports from GitHub Actions Artifacts
+        uses: actions/download-artifact@v5
+        with:
+          path: all-blob-reports
+          pattern: blob-report-*
+          merge-multiple: true
+      - name: Merge into JSON Report
+        run: PLAYWRIGHT_JSON_OUTPUT_NAME=results.json npx playwright merge-reports --reporter json ./all-blob-reports
+      - uses: daun/playwright-report-summary@v3
+        if: always()
+        with:
+          report-file: results.json
 
   android:
     runs-on: ubuntu-latest
     name: Android
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v3
-        id: yarn-cache
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
         with:
-          path: "./.yarn/cache"
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          cache: "npm"
+          node-version-file: ".node_version"
 
       - name: Install Dependencies
-        run: yarn install --check-cache
+        run: npm ci
 
       - name: Build/Sync JS Bundles
         run: |
-          yarn build
-          yarn run capacitor sync
+          npm run build
+          npx cap sync
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
-            distribution: "temurin"
-            java-version: "11"
-            cache: "gradle"
-
+          distribution: "temurin"
+          java-version-file: ".java-version"
+          cache: "gradle"
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
       - name: Run android tests
         run: |
           cd android/
