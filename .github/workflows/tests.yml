@@ -23,7 +23,7 @@ jobs:
         run: npm ci
       - name: Run Vitest
         run: npm run test:unit
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: coverage/lcov.info
