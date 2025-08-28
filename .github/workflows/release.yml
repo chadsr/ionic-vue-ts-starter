@@ -42,7 +42,14 @@ jobs:
       - name: Check for version change
         run: |
           CURRENT_VERSION=$(npm pkg get version)
-          echo "VERSION_CHANGED=$([[ "$CURRENT_VERSION" == "${{ steps.release.outputs.resolved_version }}" ]] && echo true)" >> $GITHUB_ENV
+          CURRENT_VERSION="${CURRENT_VERSION%\"}"
+          CURRENT_VERSION="${CURRENT_VERSION#\"}"
+          NEW_VERSION="${{ steps.release.outputs.resolved_version }}"
+          echo "Current Version: $CURRENT_VERSION"
+          echo "New Version: $NEW_VERSION"
+          V_CHANGED=false [ "$CURRENT_VERSION" != "$NEW_VERSION" ] && V_CHANGED=true
+          echo "VERSION_CHANGED=$V_CHANGED" >> $GITHUB_ENV
+          echo "Version Changed: $V_CHANGED"
 
       - name: Update package.json version
         if: env.VERSION_CHANGED == 'true'
