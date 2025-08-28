@@ -14,6 +14,8 @@ jobs:
     permissions:
       contents: write  # for release-drafter/release-drafter to create a github release
       pull-requests: write  # for release-drafter/release-drafter to add label to PR
+    env:
+      VERSION_CHANGED: false
 
     steps:
       - uses: actions/checkout@v5
@@ -37,33 +39,42 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Check for version change
+        run: |
+          CURRENT_VERSION=$(npm pkg get version)
+          echo "VERSION_CHANGED=$([[ "$CURRENT_VERSION" == "${{ steps.release.outputs.resolved_version }}" ]] && echo true)" >> $GITHUB_ENV
+
       - name: Update package.json version
+        if: env.VERSION_CHANGED == 'true'
         id: package-version
         run: |
-          echo "Next Version: ${{ steps.release.outputs.tag_name }}"
-          npm version --git-tag-version=false --allow-same-version=true ${{ steps.release.outputs.tag_name }}
+          echo "Next Version: ${{ steps.release.outputs.resolved_version }}"
+          npm version --git-tag-version=false --allow-same-version=true ${{ steps.release.outputs.resolved_version }}
 
       - name: Update Android Version
+        if: env.VERSION_CHANGED == 'true'
         uses: chkfung/android-version-actions@v1.2.2
         with:
           gradlePath: ./android/app/build.gradle
           versionCode: ${{github.run_number}}
-          versionName: ${{ steps.release.outputs.tag_name }}
+          versionName: ${{ steps.release.outputs.resolved_version }}
 
       - name: Update IOS Info.plist versions
+        if: env.VERSION_CHANGED == 'true'
         id: ios-version
         uses: damienaicheh/update-ios-version-info-plist-action@v1.2.0
         with:
           info-plist-path: "./ios/App/App/Info.plist"
-          bundle-short-version-string: "${{ steps.release.outputs.tag_name }}"
-          bundle-version: "${{ steps.release.outputs.tag_name }}"
+          bundle-short-version-string: "${{ steps.release.outputs.resolved_version }}"
+          bundle-version: "${{ steps.release.outputs.resolved_version }}"
 
       - name: Create Pull Request
+        if: env.VERSION_CHANGED == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          title: "App Version ${{ steps.release.outputs.tag_name }}"
-          body: "Update Version to ${{ steps.release.outputs.tag_name }}"
-          commit-message: "version: ${{ steps.release.outputs.tag_name }}"
-          branch: "version-bump/${{ steps.release.outputs.tag_name }}"
+          title: "App Version ${{ steps.release.outputs.resolved_version }}"
+          body: "Update Version to ${{ steps.release.outputs.resolved_version }}"
+          commit-message: "version: ${{ steps.release.outputs.resolved_version }}"
+          branch: "version-bump/${{ steps.release.outputs.resolved_version }}"
           labels: |-
             version
