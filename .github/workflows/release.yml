@@ -25,6 +25,11 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
+      - uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+          node-version-file: ".node_version"
+
       - name: Draft Release
         id: release
         # Drafts your next Release notes as Pull Requests are merged into "main"
@@ -37,6 +42,13 @@ jobs:
         run: |
           echo "Next Version: ${{ steps.release.outputs.tag_name }}"
           npm version --git-tag-version=false --allow-same-version=true ${{ steps.release.outputs.tag_name }}
+
+      - name: Update Android Version
+        uses: chkfung/android-version-actions@v1.2.2
+        with:
+          gradlePath: ./android/app/build.gradle
+          versionCode: ${{github.run_number}}
+          versionName: ${{ steps.release.outputs.tag_name }}
 
       - name: Update IOS Info.plist versions
         id: ios-version
