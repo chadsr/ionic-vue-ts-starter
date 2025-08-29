@@ -60,7 +60,7 @@ jobs:
 
       - name: Update Android Version
         if: env.VERSION_CHANGED == 'true'
-        uses: chkfung/android-version-actions@v1.2.2
+        uses: chkfung/android-version-actions@v1.2.3
         with:
           gradlePath: ./android/app/build.gradle
           versionCode: ${{github.run_number}}
