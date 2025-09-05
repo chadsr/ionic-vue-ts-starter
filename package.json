@@ -41,7 +41,7 @@
     "@ionic/prettier-config": "^4.0.0",
     "@playwright/test": "^1.55.0",
     "@tailwindcss/cli": "^4.1.13",
-    "@tailwindcss/postcss": "^4.1.12",
+    "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/vite": "^4.1.13",
     "@tsconfig/node-ts": "^23.6.1",
     "@types/jsdom": "^21.1.7",
