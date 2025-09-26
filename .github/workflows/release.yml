@@ -66,14 +66,14 @@ jobs:
           versionCode: ${{github.run_number}}
           versionName: ${{ steps.release.outputs.resolved_version }}
 
-      - name: Update IOS Info.plist versions
-        if: env.VERSION_CHANGED == 'true'
-        id: ios-version
-        uses: damienaicheh/update-ios-version-info-plist-action@v1.2.0
-        with:
-          info-plist-path: "./ios/App/App/Info.plist"
-          bundle-short-version-string: "${{ steps.release.outputs.resolved_version }}"
-          bundle-version: "${{ steps.release.outputs.resolved_version }}"
+      # - name: Update IOS Info.plist versions
+      #   if: env.VERSION_CHANGED == 'true'
+      #   id: ios-version
+      #   uses: damienaicheh/update-ios-version-info-plist-action@v1.2.0
+      #   with:
+      #     info-plist-path: "./ios/App/App/Info.plist"
+      #     bundle-short-version-string: "${{ steps.release.outputs.resolved_version }}"
+      #     bundle-version: "${{ steps.release.outputs.resolved_version }}"
 
       - name: Create Pull Request
         if: env.VERSION_CHANGED == 'true'
