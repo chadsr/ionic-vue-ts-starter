@@ -112,7 +112,7 @@ jobs:
           java-version-file: ".java-version"
           cache: "gradle"
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
       - name: Run android tests
         run: |
           cd android/
