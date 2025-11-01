@@ -18,7 +18,7 @@
   "prettier": "@ionic/prettier-config",
   "dependencies": {
     "@capacitor/android": "^7.4.3",
-    "@capacitor/app": "^7.0.2",
+    "@capacitor/app": "^7.1.0",
     "@capacitor/core": "^7.4.3",
     "@capacitor/haptics": "^7.0.2",
     "@capacitor/ios": "^7.4.3",
