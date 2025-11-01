@@ -34,7 +34,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@capacitor/cli": "^7.4.3",
+    "@capacitor/cli": "^7.4.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@ionic/eslint-config": "^0.4.0",
