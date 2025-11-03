@@ -31,7 +31,7 @@ jobs:
           cache: "gradle"
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
       
       - name: Capacitor Doctor
         run: npx cap doctor android
