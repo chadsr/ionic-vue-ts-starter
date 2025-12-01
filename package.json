@@ -22,7 +22,7 @@
     "@capacitor/core": "^7.4.3",
     "@capacitor/haptics": "^7.0.2",
     "@capacitor/ios": "^7.4.3",
-    "@capacitor/keyboard": "^7.0.2",
+    "@capacitor/keyboard": "^7.0.3",
     "@capacitor/status-bar": "^7.0.2",
     "@ionic/vue": "^8.7.8",
     "@ionic/vue-router": "^8.7.3",
