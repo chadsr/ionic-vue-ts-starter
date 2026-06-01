@@ -83,7 +83,7 @@ jobs:
           merge-multiple: true
       - name: Merge into JSON Report
         run: PLAYWRIGHT_JSON_OUTPUT_NAME=results.json npx playwright merge-reports --reporter json ./all-blob-reports
-      - uses: daun/playwright-report-summary@v3
+      - uses: daun/playwright-report-summary@v4
         if: always()
         with:
           report-file: results.json
